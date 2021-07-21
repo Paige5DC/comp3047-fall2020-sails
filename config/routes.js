@@ -19,7 +19,27 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+  //'/': { view: 'pages/homepage' },
+
+  'GET /': 'WebController.home',
+  'GET /web': 'WebController.home',
+
+  'GET /web/home': 'WebController.home',
+  'POST /web/home': 'WebController.home',
+
+  'GET /web/json': 'WebController.json',
+
+  'GET /web/create': 'WebController.create',
+  'POST /web/create': 'WebController.create',
+
+  'GET /web/update/:id': 'WebController.update',
+  'POST /web/update/:id': 'WebController.update',
+  'POST /web/delete/:id': 'WebController.delete',
+
+  'GET /web/read/:id': 'WebController.read',
+
+  "GET /web/admin": 'WebController.admin',
+  "POST /web/admin": 'WebController.admin',
 
 
   /***************************************************************************

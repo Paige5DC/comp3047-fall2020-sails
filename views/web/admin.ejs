@@ -1,0 +1,38 @@
+<br />
+<br />
+
+<section>
+    <div class="container">
+        <h1 class="title">Q-Pon </h1>
+        <p class="subtitle">Redeem your coins for dining coupons.</p>
+
+        <br />
+        <br />
+
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Restaurant</th>
+                <th></th>
+            </tr>
+            
+            <% record.forEach( function(web) { %>
+            <tr>
+                <td><%= web.id %></td>
+                <td><%= web.restaurant %></td>
+                <td><%= web.title %></td>
+                <td><a href="web/update/<%= web.id %>">Update</a></td>
+            
+            </tr>
+
+            <% }); %>
+
+        </table>
+
+
+    </div>
+
+    
+</section>

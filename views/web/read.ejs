@@ -1,0 +1,40 @@
+<table class="table is-bordered is-striped is-hoverable is-fullwidth">
+
+    <br />
+    <div class="container">
+        <div class="columns">
+            <div class="column is two third">
+                <div class="image ">
+                    <img src="<%= web.image %>">
+                </div>
+            </div>
+
+            <div class="column">
+
+                <ul style="list-style-type : disc">
+
+                    <li><strong>Restaurant:
+                            <%= web.restaurant %>
+                        </strong>
+                    </li>
+                    <li><strong><%= web.title %></li></strong>
+
+                    <li><strong>Coins: </strong> <%= web.coins %></li>
+
+                    <li><strong>Address: </strong> <%= web.mall %>, <%=web.region %></li>
+
+                    <li><strong>Expiry date: </strong> <%= web.expiryDate %></li>
+
+                    <li><strong>Quota: </strong> <%= web.quota %></li>
+
+                    <li><%= web.detail %></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</table>
+
+
+</script>

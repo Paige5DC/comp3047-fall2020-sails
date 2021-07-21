@@ -1,0 +1,108 @@
+<!--home.ejs-->
+
+<br />
+<br />
+
+<section>
+    <div class="container">
+      <h1 class="title">Q-Pon </h1>
+      <p class="subtitle">Redeem your coins for dining coupons.</p>
+    </div>
+  </section>
+
+  <br />
+  <br />
+
+<table class="table is-bordered is-striped is-hoverable is-fullwidth">
+
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div calss="column">
+                    <strong>
+                        <div>HK Island</div>
+                    </strong>
+                    <% HKIsland.forEach( function(web) { %>
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image ">
+                                <img src="<%= web.image %>">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <a href="http://localhost:1337/web/read/<%= web.id %>">
+                                <strong>
+                                    <li><%= web.restaurant %></li>
+                                </strong>
+                            </a>
+                            <li><%= web.title %></li>
+                            <br>
+                            <li>Coins: <%= web.coins %></li>
+
+                        </div>
+                    </div>
+                    <br>
+                    <% }); %>
+                </div>
+            </div>
+            <div class="column">
+                <div calss="column">
+                    <strong>
+                        <div>Kowloon</div>
+                    </strong>
+                    <% Kowloon.forEach( function(web) { %>
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="<%= web.image %>">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <a href="http://localhost:1337/web/read/<%= web.id %>">
+                                <strong>
+                                    <li><%= web.restaurant %></li>
+                                </strong>
+                            </a>
+                            <li><%= web.title %></li>
+                            <br>
+                            <li>Coins: <%= web.coins %></li>
+
+                        </div>
+
+                    </div>
+                    <br>
+                    <% }); %>
+                </div>
+            </div>
+            <div class="column">
+                <div calss="column">
+                    <strong>
+                        <div>New Territories</div>
+                    </strong>
+                    <% NT.forEach( function(web) { %>
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="<%= web.image %>">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <a href="http://localhost:1337/web/read/<%= web.id %>">
+                                <strong>
+                                    <li><%= web.restaurant %></li>
+                                </strong>
+                            </a>
+                            <li><%= web.title %></li>
+                            <br>
+                            <li>Coins: <%= web.coins %></li>
+                        </div>
+
+                    </div>
+                    <br>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</table>
