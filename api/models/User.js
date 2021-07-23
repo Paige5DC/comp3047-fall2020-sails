@@ -1,5 +1,5 @@
 /**
- * Web.js
+ * User.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -13,40 +13,29 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    restaurant: {
-      type: "string"
+    username: {
+      type: 'string',
+      unique: true,
+      required: true
     },
 
-    title: {
+    password: {
       type: "string"
-    },
-    
-    quota: {
-      type: "number"
     },
 
     coins: {
-      type: "number"
+      type:"number"
     },
 
-    region: {
-      type: "string"
+    role: {
+      type: "string",
+      isIn: ['admin', 'member', 'visitor'],
+      defaultsTo: 'visitor'
     },
 
-    mall: {
-      type: "string"
-    },
-
-    image: {
-      type: "string"
-    },
-    
-    expiryDate: {
-      type: "string"
-    },
-
-    detail: {
-      type: "string"
+    Redeem: {
+      collection: 'Web',
+      via: 'Buyer'
     },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
@@ -58,10 +47,11 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-    Buyer: {
-      collection: 'User',
-      via: 'Redeem',
-    }
+  },
+
+  customToJSON: function () {
+    // Return a shallow copy of this record with the password removed.
+    return _.omit(this, ['password'])
   },
 
 };

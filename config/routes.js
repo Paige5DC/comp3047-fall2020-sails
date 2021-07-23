@@ -41,7 +41,24 @@ module.exports.routes = {
   "GET /web/admin": 'WebController.admin',
   "POST /web/admin": 'WebController.admin',
 
+  'GET /web/search': 'WebController.search',
+  'POST /web/search': 'WebController.search',
 
+  'GET /user': 'UserController.login',
+  'GET /user/login': 'UserController.login',
+  'POST /user/login': 'UserController.login',
+  'POST /user/logout': 'UserController.logout',
+
+  'GET /web/:id/owners': 'UserController.populate',
+  'POST /web/:id/owners': 'UserController.populate',
+  'GET /user/:id/redeem': 'UserController.populate',
+  'POST /user/redeem/redeem/:fk': 'UserController.redeem',
+  'POST /user/redeem/remove/:fk': 'UserController.remove',
+
+  'GET /user/redeem': 'UserController.populate',
+  'POST /user/redeem': 'UserController.populate',
+  'GET /web/buyer/:id': 'UserController.populate',
+  'POST /web/buyer/:id': 'UserController.populate',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

@@ -10,6 +10,16 @@
 
 module.exports.policies = {
 
+  UserController: {
+    create: 'isMember'
+  },
+
+  WebController: {
+    create: 'isAdmin',
+    update:'isAdmin',
+    delete:'isAdmin',
+  }
+
   /***************************************************************************
   *                                                                          *
   * Default policy for all controllers and actions, unless overridden.       *

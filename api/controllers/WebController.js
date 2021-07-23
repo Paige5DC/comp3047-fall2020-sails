@@ -103,5 +103,36 @@ module.exports = {
         return res.view('web/admin', { record: everyRecord });
     },
 
+    //action - search
+    search: async function (req, res) {
+
+        if (req.query.Region && req.query.Region != "/") var Region = req.query.searchRegion;
+        var searchMinCoin = parseInt(req.query.searchMinCoin);
+        var searchMaxCoin = parseInt(req.query.searchMaxCoin);
+        var Date = req.query.searchDate || "";
+        var limit = Math.max(req.query.limit, 2) || 2;
+        var offset = Math.max(req.query.offset, 0) || 0;
+        var whereClause = {};
+
+        if (Date.length != 0) whereClause.Date = { '>=': Date };
+        whereClause.Coins = { '>=': searchMinCoin, '<=': searchMaxCoin };
+
+        var searchRecords = await Web.find({
+            where: whereClause,
+            limit: limit,
+            skip: offset,
+        });
+        var count = await Web.count({
+            where: whereClause
+        });
+
+        if (req.wantsJSON) {
+            return res.json({ searchRecords, count });
+          } else {
+            return res.view('web/search', {  numOfRecords: count });
+        };
+
+    },
+
 };
 

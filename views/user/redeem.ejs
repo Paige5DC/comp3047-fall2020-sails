@@ -1,0 +1,57 @@
+<!--my redeemed coupons-->
+<table class="table is-bordered is-striped is-hoverable is-fullwidth">
+
+
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <strong>Redeemed Coupons</strong>
+            </div>
+            <div class="column">
+                <strong>Current Balence: <%=req.session.coins %> </strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="columns is-multiline is-mobile">
+
+            <% user.redeem.forEach( function(web){ %>
+            <div class="column is-one-third">
+
+                
+
+                    <div class="container">
+
+                        <div class="column is-1-mobile is-multiline">
+
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="<%= web.image %>">
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <a href="http://localhost:1337/web/read/<%= web.id %>">
+                                        <strong>
+                                            <li><%= web.restaurant %></li>
+                                        </strong>
+                                    </a>
+                                    <li><%= web.title %></li>
+                                    <br>
+                                    <li>Coins: <%= web.coins %></li>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+         
+
+            </div>
+            <% }); %>
+
+        </div>
+    </div>
+
+    </div>
+</table>
