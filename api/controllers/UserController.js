@@ -19,7 +19,7 @@ module.exports = {
         if (!user) return res.status(401).json("User not found");
     
         if (user.password != req.body.password) 
-            return res.status(401).json("Wrong Password");
+            return res.status(401).json("Wrong Password" + user.password + req.body.password);
     
         // Reuse existing session 
         if (!req.session.username) {

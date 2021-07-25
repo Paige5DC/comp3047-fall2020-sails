@@ -1,6 +1,6 @@
 module.exports = async function (req, res, proceed) {
 
-    if (req.session.authority == 'member') {
+    if (req.session.userrole == 'member') {
         return proceed();   //proceed to the next policy,
     }
 

@@ -32,9 +32,9 @@ module.exports.routes = {
   'GET /web/create': 'WebController.create',
   'POST /web/create': 'WebController.create',
 
-  'GET /web/update/:id': 'WebController.update',
-  'POST /web/update/:id': 'WebController.update',
-  'POST /web/delete/:id': 'WebController.delete',
+  'GET /web/web/update/:id': 'WebController.update',
+  'POST /web/web/update/:id': 'WebController.update',
+  'POST /web/web/delete/:id': 'WebController.delete',
 
   'GET /web/read/:id': 'WebController.read',
 
@@ -49,16 +49,16 @@ module.exports.routes = {
   'POST /user/login': 'UserController.login',
   'POST /user/logout': 'UserController.logout',
 
-  'GET /web/:id/owners': 'UserController.populate',
-  'POST /web/:id/owners': 'UserController.populate',
+  'GET /web/:id/buyer': 'WebController.populate',
+  'POST /web/:id/buyer': 'WebController.populate',
   'GET /user/:id/redeem': 'UserController.populate',
   'POST /user/redeem/redeem/:fk': 'UserController.redeem',
   'POST /user/redeem/remove/:fk': 'UserController.remove',
 
   'GET /user/redeem': 'UserController.populate',
   'POST /user/redeem': 'UserController.populate',
-  'GET /web/buyer/:id': 'UserController.populate',
-  'POST /web/buyer/:id': 'UserController.populate',
+  'GET /web/buyer/:id': 'WebController.populate',
+  'POST /web/buyer/:id': 'WebController.populate',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

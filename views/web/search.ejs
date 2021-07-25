@@ -158,6 +158,7 @@
         var response = await fetch('/web/search?searchRegion='+search_Region+'&searchMinCoin='+search_MinCoins+'&searchMaxCoin='+search_MaxCoins+'&searchExpiryDate='+search_Date+'&limit=' + limit + "&offset=" + offset);
       
         if (response.ok) {
+            alert("Welcome back" + "'''''"); //response wrong
             var couponsJ = await response.json();
             var coupons = json.web;
             numOfRecords = json.count;

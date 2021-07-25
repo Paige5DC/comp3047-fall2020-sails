@@ -52,9 +52,18 @@ module.exports.bootstrap = async function() {
   var hash = await sails.bcrypt.hash("123456", salt);
 
   await User.createEach([
-    { username: "COMP", password: hash, role: "admin"},
-    { username: "3047", password: hash, role: "member", coins:1600},
-    { username: "pass", password: hash, role: "member", coins:100},
-    { username: "fail", role: "visitor"},
+    { username: "COMP3047", password: hash, role: "admin"},
+    { username: "304777", password: hash, coins:1600, role: "member"},
+    { username: "pass77", password: hash, coins:100, role: "member"},
+    { username: "fail77", role: "visitor"},
   ]);
+
+
+  const Finds = await Web.findOne({ restaurant: "FINDS" });
+  const Moo = await Web.findOne({ restaurant:"Moo Moo’s" });
+  
+  const pass77 = await User.findOne({ username: "pass77" });
+
+  await User.addToCollection(pass77.id, 'Redeem').members([Finds.id, Moo.id]);
+  
 };
